@@ -7,14 +7,16 @@ PROMPT = TTY::Prompt.new
 # end
 
     def greeting
-        puts "appName will present you with a list of keywords. Choose one & it'll return an artwork containing that keyword.".yellow
+        puts "appName will present you with a list of keywords.\nChoose one & it'll return an artwork containing that keyword.".yellow
     end
     greeting
 
-    def test
-        PROMPT.ask("What is your name?", default: "No Name")
+    def users_name
+        puts "What is your name?"
+        name = gets.chomp
+        puts "Welcome, #{name}!".yellow 
     end
-    test
+    users_name
 
     def welcome_menu
         choices = [
@@ -22,11 +24,11 @@ PROMPT = TTY::Prompt.new
             {name: "Exit", value: 2}
         ]
 
-        user_input = PROMPT.select("Welcome! Let's get started?", choices)
+        user_input = PROMPT.select("Let's get started?", choices)
 
         case user_input
             when 1
-                puts "Loading keywords...".yellow
+                puts "Loading colors . . .".yellow
             when 2
                 puts "Goodbye".yellow
                 exit
@@ -35,13 +37,21 @@ PROMPT = TTY::Prompt.new
     welcome_menu
 
     def color_menu
+        system "clear"
+
         PROMPT.select("Choose a color") do |menu|
             menu.choice "yellow".yellow, 1
             menu.choice "red".red, 2
             menu.choice "blue".blue, 3
             menu.choice "white", 4
-            menu.choice "black", 5
+            menu.choice "black".light_black, 5
         end
     end
     color_menu
+
+    def loading_artworks
+        puts "Loading artworks . . .".yellow
+    end
+    loading_artworks
+    
 
