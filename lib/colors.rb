@@ -1,14 +1,14 @@
-class Color
-    attr_accessor :name
+#class Color
+    #attr_accessor :name
 
-    @@all = []
+   # @@all = []
 
-    def initialize(name)
+    #def initialize(name)
         @name = name
         @@all << self
-    end
+   # end
 
-    def self.all
+    #def self.all
         @@all
-    end
-end
+    #end
+#end

@@ -1,9 +1,6 @@
-# PROMPT = TTY::Prompt.new
 # def app_name_asciiart
 #   File.readlines ("FILENAME.txt") { |line| puts "line"}
 # end
-
-require_relative "../config/environment.rb"
 
 class App
 
@@ -48,7 +45,7 @@ class App
 
     def color_menu
         system "clear"
-
+        
         PROMPT.select("Choose a color") do |menu|
             menu.choice "yellow".yellow, 1
             menu.choice "red".red, 2
@@ -56,19 +53,18 @@ class App
             menu.choice "white", 4
             menu.choice "black".light_black, 5
         end
+
+        system "clear"
         loading_artworks
     end
 
     def loading_artworks
         puts "Loading artworks . . .".yellow
-        
-        list_color_artworks
     end
 
-    def list_color_artworks
-        Color.all.each.with_index { |color, index| puts "#{index}. #{color}"}
-    end
-
+    #def list_color_artworks
+    #    Color.all.each.with_index { |color, index| puts "#{index}. #{color}"}
+    #end
 end
 
 
