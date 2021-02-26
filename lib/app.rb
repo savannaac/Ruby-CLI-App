@@ -1,22 +1,32 @@
-require "colorize"
-require "tty-prompt"
-
-PROMPT = TTY::Prompt.new
+# PROMPT = TTY::Prompt.new
 # def app_name_asciiart
 #   File.readlines ("FILENAME.txt") { |line| puts "line"}
 # end
 
+require_relative "../config/environment.rb"
+
+class App
+
+    def start
+        puts "Loading . . . ".yellow
+
+        system "clear"
+        greeting
+    end
+
     def greeting
         puts "appName will present you with a list of keywords.\nChoose one & it'll return an artwork containing that keyword.".yellow
+        
+        users_name
     end
-    greeting
 
     def users_name
         puts "What is your name?"
         name = gets.chomp
-        puts "Welcome, #{name}!".yellow 
+        puts "Welcome, #{name}!".yellow
+
+        welcome_menu 
     end
-    users_name
 
     def welcome_menu
         choices = [
@@ -33,8 +43,8 @@ PROMPT = TTY::Prompt.new
                 puts "Goodbye".yellow
                 exit
         end
+        color_menu
     end
-    welcome_menu
 
     def color_menu
         system "clear"
@@ -46,12 +56,23 @@ PROMPT = TTY::Prompt.new
             menu.choice "white", 4
             menu.choice "black".light_black, 5
         end
+        loading_artworks
     end
-    color_menu
 
     def loading_artworks
         puts "Loading artworks . . .".yellow
+        
+        list_color_artworks
     end
-    loading_artworks
+
+    def list_color_artworks
+        Color.all.each.with_index { |color, index| puts "#{index}. #{color}"}
+    end
+
+end
+
+
+
+
     
 
