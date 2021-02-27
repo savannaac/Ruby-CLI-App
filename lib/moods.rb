@@ -44,26 +44,26 @@ class Mood
         puts artworks.sad_title.cyan + ", " + artworks.sad_artist_display
     end
 
-    #angry
-    def get_angry_api
-        url = "http://api.artic.edu/api/v1/artworks/search?q=yellow&limit=3&fields=title,%20artist_display"
+    #anxious
+    def get_anxious_api
+        url = "http://api.artic.edu/api/v1/artworks/search?q=anxious&limit=3&fields=title,%20artist_display"
         data = HTTParty.get(url)
         response = data.parsed_response
     end
 
-    def angry_title
-        title = get_angry_api
+    def anxious_title
+        title = get_anxious_api
         title["data"][0]["title"]
     end
 
-    def angry_artist_display
-        artist_display = get_angry_api
+    def anxious_artist_display
+        artist_display = get_anxious_api
         artist_display["data"][0]["artist_display"]
     end
 
-    def self.get_angry
+    def self.get_anxious
         artworks = Mood.new
-        puts artworks.angry_title.red + ", " + artworks.angry_artist_display
+        puts artworks.anxious_title.red + ", " + artworks.anxious_artist_display
     end
 end
 

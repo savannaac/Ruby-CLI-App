@@ -1,26 +1,32 @@
-# def app_name_asciiart
-#   File.readlines ("FILENAME.txt") { |line| puts "line"}
-# end
-
 class App
 
     def start
-        puts "Loading appName . . . ".yellow
-
         system "clear"
+
+        puts "\n\n"
+        puts " _____                                  _ ".light_magenta  
+        puts "/  ___|                                | | ".light_magenta  
+        puts "\ `--.  _ __ ___            __ _  _ __ | |_ ".light_magenta 
+        puts " `--. \| '_ ` _ \          / _` || '__|| __| ".light_magenta
+        puts "/\__/ /| | | | | |        | (_| || |   | |_  ".light_magenta
+        puts "\____/ |_| |_| |_|         \__,_||_|    \__| ".light_magenta
+        puts "                   ______                    ".light_magenta
+        puts "                  |______|                  \n\n".light_magenta
+
     greeting
     end
 
     def greeting
-        puts "appName will present you with a list of keywords.\nChoose one & it'll return an artwork containing that keyword.".yellow
+        puts "Sm_art will present you with a list of keywords.\nChoose one & it'll return an artwork containing that keyword.".yellow
         
     users_name
     end
 
     def users_name
+        puts "\n"
         puts "What is your name?"
         name = gets.chomp
-        puts "Welcome, #{name}!".yellow
+        puts "Welcome, #{name}!\n".yellow
 
     welcome_menu 
     end
@@ -35,11 +41,21 @@ class App
 
             case user_input
                 when 1
-                    puts "Loading keywords . . .".yellow
+                    system "clear"
+
+                    puts "Loading keywords and artworks . . .".yellow
                 when 2
-                    puts "Goodbye".yellow
+                    puts "\n\n"
+                    puts " ░██████╗░░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗███████╗".yellow
+                    puts " ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗░██╔╝██╔════╝".yellow
+                    puts " ██║░░██╗░██║░░██║██║░░██║██║░░██║██████╦╝░╚████╔╝░█████╗░░".yellow
+                    puts " ██║░░╚██╗██║░░██║██║░░██║██║░░██║██╔══██╗░░╚██╔╝░░██╔══╝░░".yellow
+                    puts " ╚██████╔╝╚█████╔╝╚█████╔╝██████╔╝██████╦╝░░░██║░░░███████╗".yellow
+                    puts " ░╚═════╝░░╚════╝░░╚════╝░╚═════╝░╚═════╝░░░░╚═╝░░░╚══════╝ \n\n".yellow
+                    
                     exit
             end
+    sleep(3)        
     keyword_menu
     end
 
@@ -74,18 +90,15 @@ class App
             case user_color
                 when 1
                     system "clear"
-                    puts "Loading YELLOW artwork . . .".yellow
-
+                   
                     yellow_results
                 when 2
                     system "clear"
-                    puts "Loading RED artwork . . .".yellow
-
+                   
                     red_results
                 when 3
                     system "clear"
-                    puts "Loading BLUE artwork . . .".yellow 
-
+                    
                     blue_results
             end
     another_color_or_exit
@@ -109,25 +122,22 @@ class App
         user_mood = PROMPT.select("Now, let's choose a mood") do |menu|
             menu.choice "happy".green, 1
             menu.choice "sad".cyan, 2
-            menu.choice "angry".red, 3
+            menu.choice "anxious".red, 3
         end
 
             case user_mood
                 when 1
                     system "clear"
-                    puts "Loading HAPPY artwork . . .".yellow
 
                     happy_results
                 when 2
                     system "clear"
-                    puts "Loading SAD artwork . . .".yellow
 
                     sad_results
                 when 3
                     system "clear"
-                    puts "Loading ANGRY artwork . . .".yellow
 
-                    angry_results
+                    anxious_results
             end
     another_mood_or_exit
     end
@@ -140,8 +150,8 @@ class App
         puts Mood.get_sad
     end
 
-    def angry_results
-        puts Mood.get_angry
+    def anxious_results
+        puts Mood.get_anxious
     end
 
     def appliance_menu
@@ -156,17 +166,14 @@ class App
             case user_appliance
                 when 1
                     system "clear"
-                    puts "Loading STOVE artwork . . .".yellow
 
                     stove_results
                 when 2
                     system "clear"
-                    puts "Loading REFRIGERATOR artwork . . .".yellow
 
                     refrigerator_results
                 when 3
                     system "clear"
-                    puts "Loading toilet artwork . . .".yellow
 
                     toilet_results
             end
@@ -198,7 +205,14 @@ class App
                 when 2
                     keyword_menu
                 when 3
-                    puts "Goodbye".yellow
+                    puts "\n\n"
+                    puts " ░██████╗░░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗███████╗".yellow
+                    puts " ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗░██╔╝██╔════╝".yellow
+                    puts " ██║░░██╗░██║░░██║██║░░██║██║░░██║██████╦╝░╚████╔╝░█████╗░░".yellow
+                    puts " ██║░░╚██╗██║░░██║██║░░██║██║░░██║██╔══██╗░░╚██╔╝░░██╔══╝░░".yellow
+                    puts " ╚██████╔╝╚█████╔╝╚█████╔╝██████╔╝██████╦╝░░░██║░░░███████╗".yellow
+                    puts " ░╚═════╝░░╚════╝░░╚════╝░╚═════╝░╚═════╝░░░░╚═╝░░░╚══════╝ \n\n".yellow
+                    
                     exit
             end
     end
@@ -216,7 +230,14 @@ class App
                 when 2
                     keyword_menu
                 when 3
-                    puts "Goodbye".yellow
+                    puts "\n\n"
+                    puts " ░██████╗░░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗███████╗".yellow
+                    puts " ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗░██╔╝██╔════╝".yellow
+                    puts " ██║░░██╗░██║░░██║██║░░██║██║░░██║██████╦╝░╚████╔╝░█████╗░░".yellow
+                    puts " ██║░░╚██╗██║░░██║██║░░██║██║░░██║██╔══██╗░░╚██╔╝░░██╔══╝░░".yellow
+                    puts " ╚██████╔╝╚█████╔╝╚█████╔╝██████╔╝██████╦╝░░░██║░░░███████╗".yellow
+                    puts " ░╚═════╝░░╚════╝░░╚════╝░╚═════╝░╚═════╝░░░░╚═╝░░░╚══════╝ \n\n".yellow
+                    
                     exit
             end
     end
@@ -234,7 +255,14 @@ class App
                 when 2
                     keyword_menu
                 when 3
-                    puts "Goodbye".yellow
+                    puts "\n\n"
+                    puts " ░██████╗░░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗███████╗".yellow
+                    puts " ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗░██╔╝██╔════╝".yellow
+                    puts " ██║░░██╗░██║░░██║██║░░██║██║░░██║██████╦╝░╚████╔╝░█████╗░░".yellow
+                    puts " ██║░░╚██╗██║░░██║██║░░██║██║░░██║██╔══██╗░░╚██╔╝░░██╔══╝░░".yellow
+                    puts " ╚██████╔╝╚█████╔╝╚█████╔╝██████╔╝██████╦╝░░░██║░░░███████╗".yellow
+                    puts " ░╚═════╝░░╚════╝░░╚════╝░╚═════╝░╚═════╝░░░░╚═╝░░░╚══════╝ \n\n".yellow
+                    
                     exit
             end
     end
