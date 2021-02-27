@@ -4,6 +4,7 @@ require "httparty"
 require "json"
 require "tty-prompt"
 require "colorize"
+require "asciiart"
 require 'bundler/setup'
 
 Bundler.require
