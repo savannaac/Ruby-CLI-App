@@ -60,11 +60,15 @@ class App
 
     def loading_artworks
         puts "Loading artworks . . .".yellow
+
+        blue_results
     end
 
-    #def list_color_artworks
-    #    Color.all.each.with_index { |color, index| puts "#{index}. #{color}"}
-    #end
+    def blue_results
+        system "clear"
+
+        puts Api.get_blue
+    end
 end
 
 
