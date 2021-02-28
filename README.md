@@ -1,26 +1,26 @@
 # Sm_art
-Sm_art is an art cli app that returns an artwork, from the Art Institute of Chicago, based on a keyword. 
+**Sm_art** is an art cli app that returns an artwork, from the Art Institute of Chicago, based on a keyword. 
 
 ## Installation 
 Fork the repo & clone to your computer
 
-`git clone git@github.com:your-github-account/Ruby-CLI-App.git`
+  `git clone git@github.com:your-github-account/Ruby-CLI-App.git`
 
 Enter the folder created by the clone
 
-`cd ruby-cli-app`
+  `cd ruby-cli-app`
 
 Install dependencies
 
-`bundle install`
+  `bundle install`
 
 Enter the `bin` directory
 
-`cd bin`
+  `cd bin`
 
 Run the program
 
-`cd ruby run.rb`
+  `cd ruby run.rb`
 
 ## Usage
 After running the program & entering your name, 
