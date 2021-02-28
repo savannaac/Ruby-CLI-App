@@ -1,5 +1,3 @@
-require "net/http"
-require "open-uri"
 require "httparty"
 require "json"
 require "tty-prompt"

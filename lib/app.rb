@@ -4,27 +4,25 @@ class App
         system "clear"
 
         puts "\n\n"
-        puts " _____                                  _ ".light_magenta  
-        puts "/  ___|                                | | ".light_magenta  
-        puts "\ `--.  _ __ ___            __ _  _ __ | |_ ".light_magenta 
-        puts " `--. \| '_ ` _ \          / _` || '__|| __| ".light_magenta
-        puts "/\__/ /| | | | | |        | (_| || |   | |_  ".light_magenta
-        puts "\____/ |_| |_| |_|         \__,_||_|    \__| ".light_magenta
-        puts "                   ______                    ".light_magenta
-        puts "                  |______|                  \n\n".light_magenta
+        puts " ░██████╗███╗░░░███╗      ░█████╗░██████╗░████████╗ ".light_magenta
+        puts " ██╔════╝████╗░████║      ██╔══██╗██╔══██╗╚══██╔══╝ ".light_magenta
+        puts " ╚█████╗░██╔████╔██║      ███████║██████╔╝░░░██║░░░ ".light_magenta
+        puts " ░╚═══██╗██║╚██╔╝██║      ██╔══██║██╔══██╗░░░██║░░░ ".light_magenta
+        puts " ██████╔╝██║░╚═╝░██║      ██║░░██║██║░░██║░░░██║░░░ ".light_magenta
+        puts " ╚═════╝░╚═╝░░░░░╚═╝      ╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░ \n\n".light_magenta
 
     greeting
     end
 
     def greeting
-        puts "Sm_art will present you with a list of keywords.\nChoose one & it'll return an artwork containing that keyword.".yellow
+        puts "Sm_art will present you a list of keywords.\nChoose one and it'll return a relevant artwork.".yellow
         
     users_name
     end
 
     def users_name
         puts "\n"
-        puts "What is your name?"
+        puts "Hi, what's your name?"
         name = gets.chomp
         puts "Welcome, #{name}!\n".yellow
 
@@ -43,7 +41,8 @@ class App
                 when 1
                     system "clear"
 
-                    puts "Loading keywords and artworks . . .".yellow
+                    puts "\n\n"
+                    puts "🄻🄾🄰🄳🄸🄽🄶 🄺🄴🅈🅆🄾🅁🄳🅂 🄰🄽🄳 🄰🅁🅃🅆🄾🅁🄺🅂 . . .".yellow
                 when 2
                     puts "\n\n"
                     puts " ░██████╗░░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗███████╗".yellow
@@ -193,7 +192,9 @@ class App
     end
 
     def another_color_or_exit
-        user_choose_another = PROMPT.select("Well, that was fun.\n What next?") do |menu|
+        sleep(1)
+
+        user_choose_another = PROMPT.select("Well, that was fun. What next?") do |menu|
             menu.choice "choose another color (choosing the same color will return the same artwork)", 1
             menu.choice "select another keyword", 2
             menu.choice "exit", 3
@@ -218,7 +219,9 @@ class App
     end
 
     def another_mood_or_exit
-        user_choose_another = PROMPT.select("Well, that was fun.\n What next?") do |menu|
+        sleep(1)
+
+        user_choose_another = PROMPT.select("Well, that was fun. What next?") do |menu|
             menu.choice "choose another mood (choosing the same mood will return the same artwork)", 1
             menu.choice "select another keyword", 2
             menu.choice "exit", 3
@@ -243,7 +246,9 @@ class App
     end
 
     def another_appliance_or_exit
-        user_choose_another = PROMPT.select("Well, that was fun.\n What next?") do |menu|
+        sleep(1)
+
+        user_choose_another = PROMPT.select("Well, that was fun. What next?") do |menu|
             menu.choice "choose another appliance (choosing the same appliance will return the same artwork)", 1
             menu.choice "select another keyword", 2
             menu.choice "exit", 3
