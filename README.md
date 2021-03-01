@@ -1,5 +1,5 @@
 # Sm_art
-**Sm_art** is an art cli app that returns an artwork, from the Art Institute of Chicago, based on a keyword. 
+**Sm_art** is an art CLI app that returns an artwork, from the Art Institute of Chicago, based on a keyword. 
 
 ## Installation 
 Fork the repo & clone to your computer
