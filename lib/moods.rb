@@ -6,20 +6,17 @@ class Mood
         data = HTTParty.get(url)
         responses = data.parsed_response
     end
-    
-    def happy_title
-        title = get_happy_api
-        title["data"][0]["title"]
-    end
 
-    def happy_artist_display
-        artist_display = get_happy_api
-        artist_display["data"][0]["artist_display"]
+    def happy_artwork
+        mood = get_happy_api
+        title = mood["data"][0]["title"]
+        artist_display = mood["data"][0]["artist_display"]
+        puts title.green + ", " + artist_display
     end
 
     def self.get_happy
-        artworks = Mood.new
-        puts artworks.happy_title.green + ", " + artworks.happy_artist_display
+        artwork = Mood.new
+        puts artwork.happy_artwork
     end
 
     #sad
@@ -29,19 +26,16 @@ class Mood
         response = data.parsed_response
     end
 
-    def sad_title
-        title = get_sad_api
-        title["data"][0]["title"]
-    end
-
-    def sad_artist_display
-        artist_display = get_sad_api
-        artist_display["data"][0]["artist_display"]
+    def sad_artwork
+        mood = get_sad_api
+        title = mood["data"][0]["title"]
+        artist_display = mood["data"][0]["artist_display"]
+        puts title.cyan + ", " + artist_display
     end
 
     def self.get_sad
-        artworks = Mood.new
-        puts artworks.sad_title.cyan + ", " + artworks.sad_artist_display
+        artwork = Mood.new
+        puts artwork.sad_artwork
     end
 
     #anxious
@@ -51,19 +45,16 @@ class Mood
         response = data.parsed_response
     end
 
-    def anxious_title
-        title = get_anxious_api
-        title["data"][0]["title"]
-    end
-
-    def anxious_artist_display
-        artist_display = get_anxious_api
-        artist_display["data"][0]["artist_display"]
+    def anxious_artwork
+        mood = get_anxious_api
+        title = mood["data"][0]["title"]
+        artist_display = mood["data"][0]["artist_display"]
+        puts title.red + ", " + artist_display
     end
 
     def self.get_anxious
-        artworks = Mood.new
-        puts artworks.anxious_title.red + ", " + artworks.anxious_artist_display
+        artwork = Mood.new
+        puts artwork.anxious_artwork
     end
 end
 

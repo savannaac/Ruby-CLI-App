@@ -1,3 +1,4 @@
+
 class App
 
     def start
@@ -38,7 +39,7 @@ class App
         user_input = PROMPT.select("Let's get started?", choices)
 
             case user_input
-                when 1
+                when 1 
                     system "clear"
 
                     puts "\n\n"
@@ -271,5 +272,4 @@ class App
                     exit
             end
     end
-
 end

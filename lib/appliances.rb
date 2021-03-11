@@ -6,20 +6,17 @@ class Appliance
         data = HTTParty.get(url)
         responses = data.parsed_response
     end
-    
-    def stove_title
-        title = get_stove_api
-        title["data"][0]["title"]
-    end
 
-    def stove_artist_display
-        artist_display = get_stove_api
-        artist_display["data"][0]["artist_display"]
+    def stove_artwork
+        appliance = get_stove_api
+        title = appliance["data"][0]["title"]
+        artist_display = appliance["data"][0]["artist_display"]
+        puts title.magenta + ", " + artist_display
     end
 
     def self.get_stove
-        artworks = Appliance.new
-        puts artworks.stove_title.magenta + ", " + artworks.stove_artist_display
+        artwork = Appliance.new
+        puts artwork.stove_artwork
     end
 
     #refrigerator
@@ -27,21 +24,20 @@ class Appliance
         url = "http://api.artic.edu/api/v1/artworks/search?q=refrigerator&limit=3&fields=title,%20artist_display"
         data = HTTParty.get(url)
         response = data.parsed_response
+
+        # puts self
     end
 
-    def refrigerator_title
-        title = get_refrigerator_api
-        title["data"][0]["title"]
-    end
-
-    def refrigerator_artist_display
-        artist_display = get_refrigerator_api
-        artist_display["data"][0]["artist_display"]
+    def refrigerator_artwork
+        appliance = get_refrigerator_api
+        title = appliance["data"][0]["title"]
+        artist_display = appliance["data"][0]["artist_display"]
+        puts title.magenta + ", " + artist_display
     end
 
     def self.get_refrigerator
-        artworks = Appliance.new
-        puts artworks.refrigerator_title.magenta + ", " + artworks.refrigerator_artist_display
+        artwork = Appliance.new
+        puts artwork.refrigerator_artwork
     end
 
     #toilet
@@ -51,18 +47,15 @@ class Appliance
         response = data.parsed_response
     end
 
-    def toilet_title
-        title = get_toilet_api
-        title["data"][0]["title"]
-    end
-
-    def toilet_artist_display
-        artist_display = get_toilet_api
-        artist_display["data"][0]["artist_display"]
+    def toilet_artwork
+        appliance = get_toilet_api
+        title = appliance["data"][0]["title"]
+        artist_display = appliance["data"][0]["artist_display"]
+        puts title.magenta + ", " + artist_display
     end
 
     def self.get_toilet
-        artworks = Appliance.new
-        puts artworks.toilet_title.magenta + ", " + artworks.toilet_artist_display
+        artwork = Appliance.new
+        puts artwork.toilet_artwork
     end
 end
