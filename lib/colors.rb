@@ -16,7 +16,7 @@ class Color
         color = get_yellow_api
         title = color["data"][0]["title"]
         artist_display = color["data"][0]["artist_display"]
-        puts title.yellow + ", " + artist_display
+        puts title.green + ", " + artist_display
     end
 
     def self.get_yellow
@@ -32,8 +32,6 @@ class Color
     #    puts artworks.color_title.yellow + ", " + artworks.color_artist_display
     #end
 
-
-
     #blue
     def get_blue_api
         url = "http://api.artic.edu/api/v1/artworks/search?q=blue&limit=3&fields=title,%20artist_display"
@@ -45,7 +43,7 @@ class Color
         color = get_blue_api
         title = color["data"][0]["title"]
         artist_display = color["data"][0]["artist_display"]
-        puts title.cyan + ", " + artist_display
+        puts title.green + ", " + artist_display
     end
 
     def self.get_blue
@@ -64,7 +62,7 @@ class Color
         color = get_red_api
         title = color["data"][0]["title"]
         artist_display = color["data"][0]["artist_display"]
-        puts title.red + ", " + artist_display
+        puts title.green + ", " + artist_display
     end
 
     def self.get_red

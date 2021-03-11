@@ -11,7 +11,7 @@ class Mood
         mood = get_happy_api
         title = mood["data"][0]["title"]
         artist_display = mood["data"][0]["artist_display"]
-        puts title.green + ", " + artist_display
+        puts title.cyan + ", " + artist_display
     end
 
     def self.get_happy
@@ -49,7 +49,7 @@ class Mood
         mood = get_anxious_api
         title = mood["data"][0]["title"]
         artist_display = mood["data"][0]["artist_display"]
-        puts title.red + ", " + artist_display
+        puts title.cyan + ", " + artist_display
     end
 
     def self.get_anxious

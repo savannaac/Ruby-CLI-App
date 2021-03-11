@@ -1,3 +1,4 @@
+require "../lib/appliances.rb"
 
 class App
 
@@ -63,9 +64,9 @@ class App
         system "clear"
         
         user_keyword = PROMPT.select("Select a keyword") do |menu|
-            menu.choice "colors", 1
-            menu.choice "moods", 2
-            menu.choice "appliances", 3
+            menu.choice "colors".green, 1
+            menu.choice "moods".cyan, 2
+            menu.choice "appliances".magenta, 3
         end
 
             case user_keyword
@@ -82,9 +83,9 @@ class App
         system "clear"
         
         user_color = PROMPT.select("Now, let's choose a color") do |menu|
-            menu.choice "yellow".yellow, 1
-            menu.choice "red".red, 2
-            menu.choice "blue".cyan, 3
+            menu.choice "yellow".green, 1
+            menu.choice "red".green, 2
+            menu.choice "blue".green, 3
         end
 
             case user_color
@@ -108,9 +109,9 @@ class App
         system "clear"
         
         user_mood = PROMPT.select("Now, let's choose a mood") do |menu|
-            menu.choice "happy".green, 1
+            menu.choice "happy".cyan, 1
             menu.choice "sad".cyan, 2
-            menu.choice "anxious".red, 3
+            menu.choice "anxious".cyan, 3
         end
 
             case user_mood
@@ -132,29 +133,41 @@ class App
 
     def appliance_menu
         system "clear"
-        
+    
         user_appliance = PROMPT.select("Now, let's choose an appliance") do |menu|
-            menu.choice "stove", 1
-            menu.choice "refrigerator", 2
-            menu.choice "toilet", 3
+            menu.choice "stove".magenta, 1
+            menu.choice "refrigerator".magenta, 2
+            menu.choice "toilet".magenta, 3
         end
-
+            
             case user_appliance
                 when 1
                     system "clear"
-
-                    puts Appliance.get_stove
+                    
+                    artwork = API.new("stove")
+                    artwork.get_appliance_api
+                    get_appliance
                 when 2
                     system "clear"
 
-                    puts Appliance.get_refrigerator
+                    artwork = API.new("refrigerator")
+                    artwork.get_appliance
+                    get_appliance
                 when 3
                     system "clear"
 
-                    puts Appliance.get_toilet
+                    artwork = API.new("toilet")
+                    artwork.get_appliance
+                    get_appliance
             end
+    puts "\n\n"
     another_appliance_or_exit
     end
+
+    def get_appliance
+        Appliance.all.each { |m| puts m.title.magenta + ", " + m.artist_display }
+    end
+
 
     def another_color_or_exit
         sleep(1)
