@@ -91,29 +91,17 @@ class App
                 when 1
                     system "clear"
                    
-                    yellow_results
+                    puts Color.get_yellow
                 when 2
                     system "clear"
                    
-                    red_results
+                    puts Color.get_red
                 when 3
                     system "clear"
                     
-                    blue_results
+                    puts Color.get_blue
             end
     another_color_or_exit
-    end
-
-    def blue_results
-        puts Color.get_blue
-    end
-
-    def red_results
-        puts Color.get_red
-    end
-
-    def yellow_results
-        puts Color.get_yellow
     end
 
     def mood_menu
@@ -129,29 +117,17 @@ class App
                 when 1
                     system "clear"
 
-                    happy_results
+                    puts Mood.get_happy
                 when 2
                     system "clear"
 
-                    sad_results
+                    puts Mood.get_sad
                 when 3
                     system "clear"
 
-                    anxious_results
+                    puts Mood.get_anxious
             end
     another_mood_or_exit
-    end
-
-    def happy_results
-        puts Mood.get_happy
-    end
-
-    def sad_results
-        puts Mood.get_sad
-    end
-
-    def anxious_results
-        puts Mood.get_anxious
     end
 
     def appliance_menu
@@ -167,29 +143,17 @@ class App
                 when 1
                     system "clear"
 
-                    stove_results
+                    puts Appliance.get_stove
                 when 2
                     system "clear"
 
-                    refrigerator_results
+                    puts Appliance.get_refrigerator
                 when 3
                     system "clear"
 
-                    toilet_results
+                    puts Appliance.get_toilet
             end
     another_appliance_or_exit
-    end
-
-    def stove_results
-        puts Appliance.get_stove
-    end
-
-    def refrigerator_results
-        puts Appliance.get_refrigerator
-    end
-
-    def toilet_results
-        puts Appliance.get_toilet
     end
 
     def another_color_or_exit
