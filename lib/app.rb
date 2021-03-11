@@ -179,7 +179,7 @@ class App
     end
 
     def get_color
-        Color.all.each { |m| puts "\n" + m.title.green + ", " + m.artist_display }
+        Color.all.each { |c| puts "\n" + c.title.green + ", " + c.artist_display }
     end
 
     def get_mood
@@ -187,7 +187,7 @@ class App
     end
 
     def get_appliance
-        Appliance.all.each { |m| puts "\n" + m.title.magenta + ", " + m.artist_display }
+        Appliance.all.each { |a| puts "\n" + a.title.magenta + ", " + a.artist_display }
     end
 
     def another_color_or_exit
