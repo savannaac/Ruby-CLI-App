@@ -92,16 +92,23 @@ class App
                 when 1
                     system "clear"
                    
-                    puts Color.get_yellow
+                    artwork = API.new("yellow")
+                    artwork.get_color_api
+                    get_color
                 when 2
                     system "clear"
                    
-                    puts Color.get_red
+                    artwork = API.new("red")
+                    artwork.get_color_api
+                    get_color
                 when 3
                     system "clear"
                     
-                    puts Color.get_blue
+                    artwork = API.new("blue")
+                    artwork.get_color_api
+                    get_color
             end
+    puts "\n\n"
     another_color_or_exit
     end
 
@@ -118,16 +125,23 @@ class App
                 when 1
                     system "clear"
 
-                    puts Mood.get_happy
+                    artwork = API.new("happy")
+                    artwork.get_mood_api
+                    get_mood
                 when 2
                     system "clear"
 
-                    puts Mood.get_sad
+                    artwork = API.new("sad")
+                    artwork.get_mood_api
+                    get_mood
                 when 3
                     system "clear"
 
-                    puts Mood.get_anxious
+                    artwork = API.new("anxious")
+                    artwork.get_mood_api
+                    get_mood
             end
+    puts "\n\n"
     another_mood_or_exit
     end
 
@@ -151,23 +165,30 @@ class App
                     system "clear"
 
                     artwork = API.new("refrigerator")
-                    artwork.get_appliance
+                    artwork.get_appliance_api
                     get_appliance
                 when 3
                     system "clear"
 
                     artwork = API.new("toilet")
-                    artwork.get_appliance
+                    artwork.get_appliance_api
                     get_appliance
             end
     puts "\n\n"
     another_appliance_or_exit
     end
 
-    def get_appliance
-        Appliance.all.each { |m| puts m.title.magenta + ", " + m.artist_display }
+    def get_color
+        Color.all.each { |m| puts "\n" + m.title.green + ", " + m.artist_display }
     end
 
+    def get_mood
+        Mood.all.each { |m| puts "\n" + m.title.cyan + ", " + m.artist_display }
+    end
+
+    def get_appliance
+        Appliance.all.each { |m| puts "\n" + m.title.magenta + ", " + m.artist_display }
+    end
 
     def another_color_or_exit
         sleep(1)
